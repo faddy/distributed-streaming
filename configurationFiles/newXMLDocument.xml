@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : newXMLDocument.xml
+    Created on : January 25, 2010, 1:32 PM
+    Author     : fahad
+    Description:
+        Purpose of the document follows.
+-->
+
+<controller>
+	<address>127.0.0.1:50000</address>
+
+	<routers>
+		<!-- Main Router -->
+		<mediarouter>
+			<address>127.0.0.1:60000</address>
+
+			<routers>
+				<!-- Child Router -->
+				<mediarouter>
+					<address>127.0.0.1:61000</address>
+
+					<routers>
+						<mediarouter>
+							<address>127.0.0.1:61100</address>
+
+							<generators>
+                                                        <generator>
+							        <address>127.0.0.1:61109</address>
+						        </generator>
+                                                        </generators>
+						</mediarouter>
+
+						<mediarouter>
+							<address>127.0.0.1:61200</address>
+						</mediarouter>
+					</routers>
+
+					<generators>
+						<generator>
+							<address>127.0.0.1:61009</address>
+						</generator>
+					</generators>
+				</mediarouter>
+
+				<mediarouter>
+					<address>127.0.0.1:62000</address>
+
+					<generators>
+                                                <generator>
+							<address>127.0.0.1:62009</address>
+						</generator>
+						<generator>
+							<address>127.0.0.1:62019</address>
+						</generator>
+					</generators>
+				</mediarouter>
+			</routers>
+		</mediarouter>
+	</routers>
+</controller>
+

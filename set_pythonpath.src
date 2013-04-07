@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Set add the src and thirdparty directories in this directory to the PYTHONPATH env variable
+# Note, this relies on the current working directory being the project directory.
+
+rootdir=`pwd`
+export PYTHONPATH=:$PYTHONPATH:$rootdir/src:$rootdir/thirdparty
+

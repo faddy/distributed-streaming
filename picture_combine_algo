@@ -1,0 +1,19 @@
+getData(self,routedData):
+	dataRecieved = decode data
+	convert to image and store Image object in dictionary 
+
+	if data is received from all generators:
+		routedData = combine()
+		sendCombinedData(routedData)
+
+
+combine():
+	make new image object with size = (no of items in dict*100, 100)
+	offset = 0
+	for item in dictionary:
+		paste items in the new image object with offset
+		offset += 100
+	resize the new image object to 100,100
+	newDataReceived = newImageObject.tostring("jpeg",('RGB',))
+
+	newPayload = encode(newDataReveived)

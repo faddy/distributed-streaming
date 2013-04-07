@@ -1,0 +1,41 @@
+viewerRequestReceived:
+
+	if (a task object for this viewer already exists):
+		delete it
+
+	create a Task object for this viewer (parameters: gens, viewer)
+
+	for (all 'g' in requestedGenerators by the viewer):
+		if ('g' is NOT in mapping):
+			add 'g' to mappingTable
+		Add task to generator-mapping table
+	
+
+generatedDataReceived(routedData):
+
+	for all tasks in map-table for this generator:
+		call task.getData(routedData from generator)
+
+	
+
+
+class Task:
+	viewerAddress = <when initialized>
+	generatorAddress[]
+	dataStructure{}
+	// a reactor keeps polling and waiting for data. ---> Not required.
+	// when data is received, getData() is called.
+
+	function getData(data):
+		add data to datastructure 
+		if (data received from all generators)
+			call combine()
+			call sendCombinedData()
+			clear data structure
+		
+	function combine(...):
+		combine data from all generators in that time frame
+
+	function sendCombinedData(...):
+		send combined data to viewerAddress
+

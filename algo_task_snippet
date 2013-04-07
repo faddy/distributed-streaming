@@ -1,0 +1,25 @@
+class Task(object):
+    def __init__(self, viewerAddress):
+	self.viewerAddres = viewerAddress
+
+
+class MediaRouterService:
+   
+    def _viewerRequestReceived(self, routedData):
+
+        viewerAddress = routedData.sourceAddress
+        requestedGenerators = routedData.payload
+        print 'viewer requested generators: %s' % requestedGenerators
+
+	task = Task(viewerAddress)
+
+        for g in requestedGenerators:
+            if g not in self.generatorTasks:
+                self.generatorTasks[g] = set()
+     
+            self.generatorTasks[g].add(task)
+
+
+    def _generatedDataReceived(self, routedData):
+	call tasklist[g]
+

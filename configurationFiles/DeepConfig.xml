@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<controller>
+	<address>127.0.0.1:50000</address>
+
+	<routers>
+		<!-- Main Router -->
+		<mediarouter>
+			<address>127.0.0.1:60000</address>
+			
+			<routers>
+				<!-- Child Router -->
+				<mediarouter>
+					<address>127.0.0.1:61000</address>
+					
+					<routers>
+						<mediarouter>
+							<address>127.0.0.1:61100</address>
+							
+							<generators>
+                                <generator>
+							        <address>127.0.0.1:61109</address>
+						        </generator>
+					        </generators>
+						</mediarouter>
+						
+						<mediarouter>
+							<address>127.0.0.1:61200</address>
+						</mediarouter>
+					</routers>
+					
+					<generators>
+						<generator>
+							<address>127.0.0.1:61009</address>
+						</generator>
+					</generators>
+				</mediarouter>
+				
+				<mediarouter>
+					<address>127.0.0.1:62000</address>
+					
+					<generators>
+						<generator>
+							<address>127.0.0.1:62009</address>
+						</generator>
+					</generators>
+				</mediarouter>
+			</routers>
+		</mediarouter>
+	</routers>
+</controller>
